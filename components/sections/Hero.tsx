@@ -207,29 +207,7 @@ export default function Hero() {
                     fill
                     style={{ objectFit: "cover" }}
              />
-                <circle cx="40" cy="30" r="18" stroke="#2a2a2a" strokeWidth="1.5" />
-                <path
-                  d="M14 72c0-14.36 11.64-26 26-26s26 11.64 26 26"
-                  stroke="#2a2a2a"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                />
-              </svg>
-              <span
-                style={{
-                  position: "absolute",
-                  bottom: "10px",
-                  left: 0,
-                  right: 0,
-                  textAlign: "center",
-                  fontFamily: "'DM Mono', monospace",
-                  fontSize: "9px",
-                  color: "var(--text-dim)",
-                  letterSpacing: "0.06em",
-                }}
-              >
-                SR
-              </span>
+             
             </div>
           </div>
         </div>
