@@ -84,8 +84,8 @@ export default function About() {
               >
                 I&apos;m an IT student at{" "}
                 <span style={{ color: "var(--text)" }}>Parul University</span>,
-                working toward a Diploma in Information Technology. I enjoy
-                understanding how things work under the hood — from operating
+                pursuing Diploma in Information Technology. I enjoy
+                understanding how things work, from operating
                 systems to the code that runs on them.
               </p>
 
@@ -98,10 +98,10 @@ export default function About() {
                 }}
               >
                 My foundation is in{" "}
-                <span style={{ color: "var(--text)" }}>Python and Java</span>,
+                <span style={{ color: "var(--text)" }}>Basic Python</span>,
                 and I've been picking up front-end development on the side.
                 I find myself most engaged when there's a real problem to
-                solve — like building a system that detects driver drowsiness
+                solve, like building a system that detects driver drowsiness
                 in real time.
               </p>
 
@@ -116,7 +116,7 @@ export default function About() {
                 Outside of coursework, I've participated in hackathons and
                 hands-on technical environments. I'm interested in{" "}
                 <span style={{ color: "var(--text)" }}>
-                  operating systems, computer networks, and UI/UX
+                  operating systems and UI/UX
                 </span>{" "}
                 — areas that span both the technical and experiential side
                 of software.
