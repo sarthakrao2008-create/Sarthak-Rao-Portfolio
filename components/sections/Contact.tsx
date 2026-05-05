@@ -104,7 +104,7 @@ export default function Contact() {
                 Email
               </p>
               <a
-                href="mailto:sarthak@example.com"
+                href="mailto:sarthakrao2008@gmail.com"
                 style={{
                   fontSize: "15px",
                   color: "var(--accent)",
@@ -122,7 +122,7 @@ export default function Contact() {
                   ((e.target as HTMLAnchorElement).style.borderColor = "rgba(79,142,247,0.3)")
                 }
               >
-                sarthak@example.com
+                sarthakrao2008@gmail.com
               </a>
             </div>
 
@@ -234,7 +234,7 @@ export default function Contact() {
                       </label>
                       <textarea
                         required
-                        placeholder="What's on your mind?"
+                        placeholder="What's going on??"
                         rows={5}
                         value={form.message}
                         onChange={(e) =>
