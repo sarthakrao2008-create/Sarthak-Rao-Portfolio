@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 export default function Hero() {
   const [loaded, setLoaded] = useState(false);
@@ -200,13 +201,12 @@ export default function Hero() {
               }}
             >
               {/* Abstract face placeholder */}
-              <svg
-                width="80"
-                height="80"
-                viewBox="0 0 80 80"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
+             <Image
+                    src="/me.jpeg"
+                    alt="Sarthak Rao"
+                    fill
+                    style={{ objectFit: "cover" }}
+             />
                 <circle cx="40" cy="30" r="18" stroke="#2a2a2a" strokeWidth="1.5" />
                 <path
                   d="M14 72c0-14.36 11.64-26 26-26s26 11.64 26 26"
