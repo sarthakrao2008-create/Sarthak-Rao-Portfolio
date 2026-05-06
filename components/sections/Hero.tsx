@@ -166,7 +166,7 @@ export default function Hero() {
               style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}
             >
               
-                href="#projects"
+               <a href="#projects"
                 style={{
                   display: "inline-block",
                   background: "var(--accent)",
@@ -189,7 +189,7 @@ export default function Hero() {
                 View Projects
               </a>
               
-                href="#contact"
+              <a  href="#contact"
                 style={{
                   display: "inline-block",
                   background: "transparent",
