@@ -244,13 +244,13 @@ export default function Hero() {
 
       <style>{`
         @media (max-width: 560px) {
-          .hero-grid {
-            grid-template-columns: 1fr !important;
-          }
-          .hero-grid > div:last-child {
-            display: none;
-          }
-        }
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+  }
+  .avatar-mobile { display: block !important; }
+  .avatar-desktop { display: none !important; }
+}
       `}</style>
     </section>
   );
