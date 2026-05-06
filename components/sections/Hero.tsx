@@ -41,38 +41,54 @@ export default function Hero() {
           margin: "0 auto",
           width: "100%",
           paddingTop: "80px",
+          paddingBottom: "48px",
         }}
       >
-        {/* Avatar shown above name on mobile only */}
-        <div className="avatar-mobile" style={{ display: "none", marginBottom: "28px" }}>
-          <div style={{
-            width: "88px",
-            height: "88px",
-            borderRadius: "10px",
-            background: "var(--bg-3)",
-            border: "1px solid var(--border)",
-            position: "relative",
-            overflow: "hidden",
-          }}>
-            <Image
-              src="/me.jpeg"
-              alt="Sarthak Rao"
-              fill
-              style={{ objectFit: "cover" }}
-            />
+        {/* MOBILE LAYOUT: image + name side by side at top */}
+        <div className="mobile-hero-top" style={{ display: "none" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "16px", marginBottom: "28px" }}>
+            {/* Small circular image */}
+            <div style={{
+              width: "72px",
+              height: "72px",
+              borderRadius: "50%",
+              border: "2px solid var(--border)",
+              position: "relative",
+              overflow: "hidden",
+              flexShrink: 0,
+            }}>
+              <Image
+                src="/me.jpeg"
+                alt="Sarthak Rao"
+                fill
+                style={{ objectFit: "cover" }}
+              />
+            </div>
+            {/* Name next to image */}
+            <div>
+              <h1 style={{
+                fontSize: "32px",
+                fontWeight: 500,
+                lineHeight: 1.05,
+                letterSpacing: "-0.03em",
+                color: "var(--text)",
+                margin: 0,
+              }}>
+                Sarthak
+                <br />
+                <span style={{ color: "var(--text-muted)", fontWeight: 300 }}>Rao</span>
+              </h1>
+            </div>
           </div>
         </div>
 
-        {/* Two-column layout */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr auto",
-            gap: "48px",
-            alignItems: "center",
-          }}
-          className="hero-grid"
-        >
+        {/* DESKTOP LAYOUT: two columns */}
+        <div className="hero-grid" style={{
+          display: "grid",
+          gridTemplateColumns: "1fr auto",
+          gap: "48px",
+          alignItems: "center",
+        }}>
           {/* Left: Text */}
           <div>
             <p
@@ -90,8 +106,9 @@ export default function Hero() {
               Available for internships
             </p>
 
+            {/* Desktop name — hidden on mobile */}
             <h1
-              className={`animate-fade-up ${loaded ? "delay-200" : ""}`}
+              className={`desktop-name animate-fade-up ${loaded ? "delay-200" : ""}`}
               style={{
                 fontSize: "clamp(38px, 6vw, 64px)",
                 fontWeight: 500,
@@ -190,10 +207,8 @@ export default function Hero() {
                   (e.target as HTMLAnchorElement).style.color = "var(--text)";
                 }}
                 onMouseLeave={(e) => {
-                  (e.target as HTMLAnchorElement).style.borderColor =
-                    "var(--border)";
-                  (e.target as HTMLAnchorElement).style.color =
-                    "var(--text-muted)";
+                  (e.target as HTMLAnchorElement).style.borderColor = "var(--border)";
+                  (e.target as HTMLAnchorElement).style.color = "var(--text-muted)";
                 }}
               >
                 Contact Me
@@ -213,9 +228,6 @@ export default function Hero() {
                 borderRadius: "12px",
                 background: "var(--bg-3)",
                 border: "1px solid var(--border)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
                 position: "relative",
                 overflow: "hidden",
               }}
@@ -234,43 +246,37 @@ export default function Hero() {
         <div
           className={`animate-fade-in ${loaded ? "delay-700" : ""}`}
           style={{
-            marginTop: "80px",
+            marginTop: "64px",
             display: "flex",
             alignItems: "center",
             gap: "10px",
           }}
         >
-          <div
-            style={{
-              width: "24px",
-              height: "1px",
-              background: "var(--text-dim)",
-            }}
-          />
-          <span
-            style={{
-              fontFamily: "'DM Mono', monospace",
-              fontSize: "11px",
-              color: "var(--text-dim)",S
-              letterSpacing: "0.08em",
-            }}
-          >
+          <div style={{ width: "24px", height: "1px", background: "var(--text-dim)" }} />
+          <span style={{
+            fontFamily: "'DM Mono', monospace",
+            fontSize: "11px",
+            color: "var(--text-dim)",
+            letterSpacing: "0.08em",
+          }}>
             scroll to explore
           </span>
         </div>
       </div>
 
       <style>{`
-        .avatar-mobile { display: none; }
         .avatar-desktop { display: block; }
+        .mobile-hero-top { display: none; }
+        .desktop-name { display: block; }
 
         @media (max-width: 560px) {
           .hero-grid {
             grid-template-columns: 1fr !important;
             gap: 0 !important;
           }
-          .avatar-mobile { display: block !important; }
           .avatar-desktop { display: none !important; }
+          .mobile-hero-top { display: block !important; }
+          .desktop-name { display: none !important; }
         }
       `}</style>
     </section>
