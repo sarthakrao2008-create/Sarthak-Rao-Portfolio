@@ -44,10 +44,9 @@ export default function Hero() {
           paddingBottom: "48px",
         }}
       >
-        {/* MOBILE LAYOUT: image + name side by side at top */}
+        {/* MOBILE: circular photo + name side by side at top */}
         <div className="mobile-hero-top" style={{ display: "none" }}>
           <div style={{ display: "flex", alignItems: "center", gap: "16px", marginBottom: "28px" }}>
-            {/* Small circular image */}
             <div style={{
               width: "72px",
               height: "72px",
@@ -64,7 +63,6 @@ export default function Hero() {
                 style={{ objectFit: "cover" }}
               />
             </div>
-            {/* Name next to image */}
             <div>
               <h1 style={{
                 fontSize: "32px",
@@ -82,13 +80,16 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* DESKTOP LAYOUT: two columns */}
-        <div className="hero-grid" style={{
-          display: "grid",
-          gridTemplateColumns: "1fr auto",
-          gap: "48px",
-          alignItems: "center",
-        }}>
+        {/* DESKTOP: two-column grid */}
+        <div
+          className="hero-grid"
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1fr auto",
+            gap: "48px",
+            alignItems: "center",
+          }}
+        >
           {/* Left: Text */}
           <div>
             <p
@@ -106,7 +107,7 @@ export default function Hero() {
               Available for internships
             </p>
 
-            {/* Desktop name — hidden on mobile */}
+            {/* Name — hidden on mobile, shown on desktop */}
             <h1
               className={`desktop-name animate-fade-up ${loaded ? "delay-200" : ""}`}
               style={{
