@@ -43,6 +43,26 @@ export default function Hero() {
           paddingTop: "80px",
         }}
       >
+        {/* Avatar shown above name on mobile only */}
+        <div className="avatar-mobile" style={{ display: "none", marginBottom: "28px" }}>
+          <div style={{
+            width: "88px",
+            height: "88px",
+            borderRadius: "10px",
+            background: "var(--bg-3)",
+            border: "1px solid var(--border)",
+            position: "relative",
+            overflow: "hidden",
+          }}>
+            <Image
+              src="/me.jpeg"
+              alt="Sarthak Rao"
+              fill
+              style={{ objectFit: "cover" }}
+            />
+          </div>
+        </div>
+
         {/* Two-column layout */}
         <div
           style={{
@@ -127,7 +147,7 @@ export default function Hero() {
               className={`animate-fade-up ${loaded ? "delay-500" : ""}`}
               style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}
             >
-              <a
+              
                 href="#projects"
                 style={{
                   display: "inline-block",
@@ -150,7 +170,7 @@ export default function Hero() {
               >
                 View Projects
               </a>
-              <a
+              
                 href="#contact"
                 style={{
                   display: "inline-block",
@@ -181,9 +201,9 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right: Avatar placeholder */}
+          {/* Right: Avatar — desktop only */}
           <div
-            className={`animate-fade-in ${loaded ? "delay-300" : ""}`}
+            className={`avatar-desktop animate-fade-in ${loaded ? "delay-300" : ""}`}
             style={{ flexShrink: 0 }}
           >
             <div
@@ -200,14 +220,12 @@ export default function Hero() {
                 overflow: "hidden",
               }}
             >
-              {/* Abstract face placeholder */}
-             <Image
-                    src="/me.jpeg"
-                    alt="Sarthak Rao"
-                    fill
-                    style={{ objectFit: "cover" }}
-             />
-             
+              <Image
+                src="/me.jpeg"
+                alt="Sarthak Rao"
+                fill
+                style={{ objectFit: "cover" }}
+              />
             </div>
           </div>
         </div>
@@ -233,7 +251,7 @@ export default function Hero() {
             style={{
               fontFamily: "'DM Mono', monospace",
               fontSize: "11px",
-              color: "var(--text-dim)",
+              color: "var(--text-dim)",S
               letterSpacing: "0.08em",
             }}
           >
@@ -243,14 +261,17 @@ export default function Hero() {
       </div>
 
       <style>{`
+        .avatar-mobile { display: none; }
+        .avatar-desktop { display: block; }
+
         @media (max-width: 560px) {
-  .hero-grid {
-    grid-template-columns: 1fr !important;
-    gap: 0 !important;
-  }
-  .avatar-mobile { display: block !important; }
-  .avatar-desktop { display: none !important; }
-}
+          .hero-grid {
+            grid-template-columns: 1fr !important;
+            gap: 0 !important;
+          }
+          .avatar-mobile { display: block !important; }
+          .avatar-desktop { display: none !important; }
+        }
       `}</style>
     </section>
   );
